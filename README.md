@@ -29,13 +29,15 @@ A comprehensive bash-based productivity system with habit tracking, streak manag
 ### 1. Download and Install
 
 ```bash
-# Create installation directory
-mkdir -p ~/productivity-install
-cd ~/productivity-install
 
-# Save all the scripts (dashboard.sh, habit.sh, exercise.sh, routine.sh, sync.sh, install.sh)
-# Then run:
+git clone https://github.com/jero98772/productivity-bash
+sudo apt install ledger -y
 bash install.sh
+
+cp -r bin/ ~/.productivity
+sudo cp bin/tt.sh /usr/bin/tt
+sudo chmod 777 /usr/bin/tt
+
 ```
 
 ### 2. Reload Shell
@@ -183,10 +185,10 @@ Uses your existing `tt` script:
 
 ```bash
 # Clock into activities
-tt in courses "Python Course"
-tt in work "Project Alpha"
-tt in uni "Data Structures"
-tt in coding "Personal Project"
+tt in courses:python
+tt in work:project
+tt in uni:data
+tt in coding:personal
 
 # Clock out
 tt out
@@ -455,3 +457,4 @@ Personal use. Modify as needed for your workflow.
 ---
 
 **Remember**: The goal isn't perfection, it's progress. Every day you check in is a win! 🎉
+
